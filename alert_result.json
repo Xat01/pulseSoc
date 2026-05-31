@@ -1,0 +1,8 @@
+[
+  {
+    "severity": "medium",
+    "port": 22,
+    "service": "OSSH",
+    "host": "scanme.nmap.org"
+  }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "host": "127.0.0.1",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.11
+    },
+    {
+        "host": "127.0.0.1",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.14
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            80,
+            22
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 2.09
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.12
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.09
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.09
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.15
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 2.16
+    }
+]
