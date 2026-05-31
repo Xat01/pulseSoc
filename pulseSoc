@@ -1,18 +1,16 @@
 import socket
 import time
-import argparse
 import asyncio
 import ssl
 from colorama import Fore, Style, init
 import json
+import traceback
 
 init(autoreset=True)
-
 
 banners = {}
 verbose = 0
 open_ports = []
-queue = asyncio.Queue()
 semaphore = asyncio.Semaphore(500)
 
 
@@ -45,7 +43,7 @@ def menu():
 """)
 
 
-def parse_args():
+"""def parse_args():
     parser = argparse.ArgumentParser(
         description="Async port Scanner with verbosity control"
     )
@@ -61,7 +59,7 @@ def parse_args():
     parser.add_argument(
         "-sV", "--banner", action="store_true", help="Grab service banners"
     )
-    return parser.parse_args()
+    return parser.parse_args()"""
 
 
 def gen_alert(result):
@@ -148,7 +146,7 @@ async def scan_port(ip, port):
         return None
 
 
-async def banner_grabbing(host, port):
+async def banner_grabbing(queue, host, port):
     try:
         if port == 443:
             reader, writer = await asyncio.wait_for(
@@ -172,12 +170,12 @@ async def banner_grabbing(host, port):
         return f"Banner Grabbing failed: {e}"
 
 
-async def Producer(start_port, end_port):
+async def Producer(queue, start_port, end_port):
     for port in range(start_port, end_port + 1):
         await queue.put(port)
 
 
-async def Worker(ip, host, args):
+async def Worker(queue, ip, host):
     while True:
         try:
             port = await queue.get()
@@ -192,9 +190,11 @@ async def Worker(ip, host, args):
                 open_ports.append(result)
                 log(f"[OPEN] Port {port} is open", level=1, color=Fore.GREEN)
 
-            if args.banner:
-                banner = await banner_grabbing(host, port)
-                banner_lines = banner.splitlines()
+            enable_banner = True
+
+            if enable_banner:
+                service_banner = await banner_grabbing(queue, host, port)
+                banner_lines = service_banner.splitlines()
                 short_banner = banner_lines[0] if banner_lines else "No banner"
                 banners[port] = short_banner
 
@@ -202,8 +202,8 @@ async def Worker(ip, host, args):
             queue.task_done()
 
         except Exception as e:
-            print(f"WORKER CRASHED : {e}")
-
+            print("Worker crashed", e)
+            return
             queue.task_done()
 
 
@@ -293,7 +293,9 @@ def menu_loop():
         choice = input("PulseSOC > ")
 
         if choice == "1":
-            asyncio.run(run_scan())
+            host = input("Target Host: ")
+            port_range = input("Port Range (eg:- 1-1000): ")
+            asyncio.run(run_scan(host, port_range))
 
         elif choice == "2":
             view_last_scan()
@@ -310,82 +312,111 @@ def menu_loop():
         input("\nPress Enter...")
 
 
-async def main():
-    global verbose
-    args = parse_args()
-    host = args.host
-    port_range = args.ports
-    verbose = args.verbose
+async def run_scan(host, port_range):
+
+    queue = asyncio.Queue()
+
+    global open_ports
+
+    open_ports.clear()
+    banners.clear()
+
+    print(f"\n[*] Scanning {host}")
+
     ip = host_resolver(host)
 
     if ip is None:
         return
-    log(f"[INFO] Starting scan on {host} ({ip})", level=1, color=Fore.CYAN)
+
+    start_port, end_port = parse_ports(port_range)
+
+    if start_port is None:
+        return
+
     start_time = time.time()
-    start_port, end_port = parse_ports(args.ports)
-    await Producer(start_port, end_port)
+
+    log(f"[INFO] Starting scan on {host} ({ip})", level=1, color=Fore.CYAN)
+
+    await Producer(queue, start_port, end_port)
 
     workers = []
 
-    worker_count = 1000
-    for work in range(worker_count):
-        workers.append(asyncio.create_task(Worker(ip, host, args)))
+    worker_count = 500
+
+    for _ in range(worker_count):
+        workers.append(asyncio.create_task(Worker(queue, ip, host)))
 
     await queue.join()
-    for work in range(worker_count):
+
+    for _ in range(worker_count):
         await queue.put(None)
+
     await asyncio.gather(*workers)
-    end_time = time.time()
-    scan_time = round(end_time - start_time, 2)
 
-    """print("\nTarget Information")
-    print("-" * 25)
-    print(f"Host: {host}")
-    print(f"Resolved IP: {ip}")
+    scan_time = round(time.time() - start_time, 2)
 
-    print("\nResults")
-    print("-" * 25)"""
+    print("\n===== Scan Complete =====")
+
     if open_ports:
-        for port in open_ports:
-            print(f"[+] Port {port} is open" + Fore.GREEN)
+
+        for port in sorted(open_ports):
+
+            print(Fore.GREEN + f"[+] Port {port} is open")
+
             if port in banners:
-                print(Fore.MAGENTA + f"     Banner:{banners[port]}")
+                print(Fore.MAGENTA + f"     Banner: {banners[port]}")
+
     else:
         print(Fore.RED + "No Open Ports Found.")
 
-    result = {"host": host, "ip": ip, "open_ports": open_ports, "scan_time": scan_time}
-    print(result["open_ports"])
+    result = {
+        "host": host,
+        "ip": ip,
+        "open_ports": sorted(open_ports),
+        "scan_time": scan_time,
+    }
 
-    alert = gen_alert(result)
-    print("Generated Alerts: ", alert)
+    alerts = gen_alert(result)
+
+    print("\nGenerated Alerts:")
+    print(alerts)
+
+    # Save scan history
 
     try:
         with open("scan_results.json", "r") as file:
             history = json.load(file)
+
     except FileNotFoundError:
         history = []
 
     history.append(result)
+
     with open("scan_results.json", "w") as file:
         json.dump(history, file, indent=4)
+
+    # Save alerts
 
     try:
         with open("alert_result.json", "r") as file:
             alert_history = json.load(file)
+
     except FileNotFoundError:
         alert_history = []
 
-    alert_history.extend(alert)
+    alert_history.extend(alerts)
+
     with open("alert_result.json", "w") as file:
         json.dump(alert_history, file, indent=4)
 
-    """print("\nSummary")
-    print("-" * 25)
-
-
+    print("\n===== Summary =====")
+    print(f"Host: {host}")
+    print(f"IP: {ip}")
     print(f"Open Ports Found: {len(open_ports)}")
-    print(f"Scan Completed In {scan_time} sec")"""
+    print(f"Scan Completed In {scan_time} sec")
+
+    return result
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    menu_loop()
