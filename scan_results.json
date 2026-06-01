@@ -106,5 +106,226 @@
             80
         ],
         "scan_time": 2.16
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135
+        ],
+        "scan_time": 3.3
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 3.25
+    },
+    {
+        "host": "google.com",
+        "ip": "142.250.183.174",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 6.2
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [],
+        "scan_time": 3.05
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 6.2
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 3.19
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 3.15
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 2.13
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.09
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.19
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.21
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.14
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.17
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.16
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 2.19
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 1.06
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 1.07
+    },
+    {
+        "host": "google.com",
+        "ip": "172.217.24.142",
+        "open_ports": [
+            80,
+            443
+        ],
+        "scan_time": 1.07
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.1
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.07
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.08
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.08
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.07
     }
 ]
