@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -216,3 +217,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+__pycache__/
+*.pyc
+
+scan_results.json
+alert_result.json
+
+.vscode/
+>>>>>>> 56b5d54 (Initial PulseSoc modular implemetation)
