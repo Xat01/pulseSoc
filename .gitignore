@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+scan_results.json
+alert_result.json
+
+.vscode/
