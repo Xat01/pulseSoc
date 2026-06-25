@@ -11,6 +11,7 @@ from scanner import (
     log,
     Producer,
     Worker,
+    fingerprints,
 )
 from alert import gen_alert
 
@@ -81,7 +82,9 @@ async def run_scan(host, port_range, silent=False):
     result = {
         "host": host,
         "ip": ip,
-        "open_ports": sorted(open_ports),
+        "open_ports": open_ports,
+        "banners": banners,
+        "services": fingerprints,
         "scan_time": scan_time,
     }
 

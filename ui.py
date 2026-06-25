@@ -32,6 +32,7 @@ def menu():
  [04] View Scan History
  [05] View Alerts
  [06] Asset Inventory
+ [07] 
 
  [00] Exit#
 =================================================
@@ -153,6 +154,15 @@ def menu_loop():
             break
 
         input("\nPress Enter...")
+
+
+def display_fingerprint(fingerprint):
+    print("-" * 45)
+    print(f"Port     : {fingerprint['port']}")
+    print(f"Service  : {fingerprint['service']}")
+    print(f"Vendor   : {fingerprint['vendor']}")
+    print(f"Version  : {fingerprint['version']}")
+    print("-" * 45)
 
 
 print("UI finished loading")

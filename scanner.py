@@ -3,10 +3,12 @@ import argparse
 from colorama import Fore, Style, init
 import asyncio
 import time
+from fingerprint import fingerprint_service
 
 verbose = 0
 open_ports = []
 banners = {}
+fingerprints = []
 semaphore = asyncio.Semaphore(500)
 
 init(autoreset=True)
@@ -123,6 +125,8 @@ async def Worker(queue, ip, host):
                 log(f"[OPEN] Port {port} is open", level=1, color=Fore.GREEN)
 
                 service_banner = await banner_grabbing(host, port)
+                fingerprint = fingerprint_service(port, service_banner)
+                fingerprints.append(fingerprint)
                 banner_lines = service_banner.splitlines()
                 short_banner = banner_lines[0] if banner_lines else "No banner"
                 banners[port] = short_banner

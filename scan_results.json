@@ -327,5 +327,130 @@
             445
         ],
         "scan_time": 2.07
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "scan_time": 1.08
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.07
+    },
+    {
+        "host": "LOCALHOST",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135
+        ],
+        "scan_time": 2.04
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 3.04
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.07
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "scan_time": 2.08
+    },
+    {
+        "host": "localhost",
+        "ip": "127.0.0.1",
+        "open_ports": [
+            135,
+            445
+        ],
+        "banners": {
+            "135": "Banner Grabbing failed: ",
+            "445": "Banner Grabbing failed: "
+        },
+        "services": [
+            {
+                "port": 135,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            },
+            {
+                "port": 445,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            }
+        ],
+        "scan_time": 2.08
+    },
+    {
+        "host": "scanme.nmap.org",
+        "ip": "45.33.32.156",
+        "open_ports": [
+            22,
+            80
+        ],
+        "banners": {
+            "80": "HTTP/1.1 400 Bad Request",
+            "22": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+        },
+        "services": [
+            {
+                "port": 135,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            },
+            {
+                "port": 445,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            },
+            {
+                "port": 80,
+                "service": "HTTP",
+                "vendor": "Apache",
+                "version": "2.4.7",
+                "banner": "HTTP/1.1 400 Bad Request\r\nDate: Thu, 25 Jun 2026 12:42:10 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nConnection: close\r\nContent-Type: text/html; charset=iso-8859-1"
+            },
+            {
+                "port": 22,
+                "service": "SSH",
+                "vendor": "OpenSSH",
+                "version": "6.6.1p1",
+                "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+            }
+        ],
+        "scan_time": 1.07
     }
 ]
