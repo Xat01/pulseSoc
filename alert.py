@@ -1,6 +1,8 @@
 import json
+import re
 
 
+        
 def gen_alert(result):
     alerts = []
     high_risk = {23: "telnet", 445: "SMB", 3389: "RDP", 3306: "MYSQL"}
