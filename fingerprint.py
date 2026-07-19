@@ -1,8 +1,13 @@
 import re
 import json
+from protocols import analyze_http
+
+protocol_dispatch = {
+    "HTTP": analyze_http,
+}
 
 
-def fingerprint_service(port, banner):
+def fingerprint_service(host, port, banner):
 
     original_banner = banner
 
@@ -31,6 +36,7 @@ def fingerprint_service(port, banner):
         # ---------- Apache ----------
         elif "apache" in banner:
             service = "HTTP"
+
             vendor = "Apache"
 
             match = re.search(r"apache/?([\d\.]+)", banner)
@@ -100,10 +106,15 @@ def fingerprint_service(port, banner):
             if match:
                 version = match.group(1)
 
-    return {
+    fingerprint = {
         "port": port,
         "service": service,
         "vendor": vendor,
         "version": version,
         "banner": original_banner,
     }
+
+    if service in protocol_dispatch:
+        fingerprint["protocol"] = protocol_dispatch[service](host, port)
+
+    return fingerprint

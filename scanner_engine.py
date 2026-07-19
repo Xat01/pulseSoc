@@ -24,6 +24,7 @@ async def run_scan(host, port_range, silent=False):
 
     open_ports.clear()
     banners.clear()
+    fingerprints.clear()
 
     if not silent:
         print(f"\n[*] Scanning {host}")

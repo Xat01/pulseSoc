@@ -55,6 +55,12 @@ def view_last_scan():
 
     last_scan = history[-1]
 
+    if "fingerprints" in last_scan:
+        print("\n === Service Intelligence ===")
+
+        for fing in last_scan:
+            display_fingerprint(fing)
+
     print("\n=== Last Scan ===\n")
 
     print(f"Host: {last_scan['host']}")
@@ -163,6 +169,17 @@ def display_fingerprint(fingerprint):
     print(f"Vendor   : {fingerprint['vendor']}")
     print(f"Version  : {fingerprint['version']}")
     print("-" * 45)
+    print()
+    protocol = fingerprint.get("protocol")
+
+    if protocol:
+        print("\n Protocol Interlligence")
+        print("-" * 45)
+
+        for key, value in protocol.items():
+            print(f"{key:<15}:{value}")
+
+        print("-" * 45)
 
 
 print("UI finished loading")

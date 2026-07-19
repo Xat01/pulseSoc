@@ -1,5 +1,6 @@
 from ui import menu_loop
 import asyncio
+import json
 
 banners = {}
 open_ports = []

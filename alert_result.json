@@ -106,5 +106,155 @@
         "port": 22,
         "service": "SSH",
         "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "High",
+        "port": 445,
+        "service": "SMB",
+        "host": "localhost"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
+    },
+    {
+        "severity": "High",
+        "port": 445,
+        "service": "SMB",
+        "host": "localhost"
+    },
+    {
+        "severity": "High",
+        "port": 445,
+        "service": "SMB",
+        "host": "localhost"
+    },
+    {
+        "severity": "medium",
+        "port": 22,
+        "service": "SSH",
+        "host": "scanme.nmap.org"
     }
 ]

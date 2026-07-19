@@ -1,119 +1,40 @@
 [
     {
-        "host": "127.0.0.1",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.11
-    },
-    {
-        "host": "127.0.0.1",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.14
-    },
-    {
         "host": "scanme.nmap.org",
         "ip": "45.33.32.156",
         "open_ports": [
             22,
             80
         ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            80,
-            22
+        "banners": {
+            "80": "HTTP/1.1 400 Bad Request",
+            "22": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+        },
+        "services": [
+            {
+                "port": 80,
+                "service": "HTTP",
+                "vendor": "Apache",
+                "version": "2.4.7",
+                "banner": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 19 Jul 2026 09:58:48 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nConnection: close\r\nContent-Type: text/html; charset=iso-8859-1",
+                "protocol": {
+                    "http_version": "HTTP/1.1",
+                    "status": "200",
+                    "status_message": "OK",
+                    "date": "Sun, 19 Jul 2026 09:58:48 GMT",
+                    "server": "Apache/2.4.7 (Ubuntu)",
+                    "content_type": "text/html"
+                }
+            },
+            {
+                "port": 22,
+                "service": "SSH",
+                "vendor": "OpenSSH",
+                "version": "6.6.1p1",
+                "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+            }
         ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 2.09
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.12
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.09
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.09
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.15
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 2.16
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135
-        ],
-        "scan_time": 3.3
+        "scan_time": 2.44
     },
     {
         "host": "localhost",
@@ -122,264 +43,49 @@
             135,
             445
         ],
-        "scan_time": 3.25
-    },
-    {
-        "host": "google.com",
-        "ip": "142.250.183.174",
-        "open_ports": [
-            80,
-            443
+        "banners": {
+            "135": "Banner Grabbing failed: ",
+            "445": "Banner Grabbing failed: "
+        },
+        "services": [
+            {
+                "port": 80,
+                "service": "HTTP",
+                "vendor": "Apache",
+                "version": "2.4.7",
+                "banner": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 19 Jul 2026 09:58:48 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nConnection: close\r\nContent-Type: text/html; charset=iso-8859-1",
+                "protocol": {
+                    "http_version": "HTTP/1.1",
+                    "status": "200",
+                    "status_message": "OK",
+                    "date": "Sun, 19 Jul 2026 09:58:48 GMT",
+                    "server": "Apache/2.4.7 (Ubuntu)",
+                    "content_type": "text/html"
+                }
+            },
+            {
+                "port": 22,
+                "service": "SSH",
+                "vendor": "OpenSSH",
+                "version": "6.6.1p1",
+                "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+            },
+            {
+                "port": 135,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            },
+            {
+                "port": 445,
+                "service": "Unknown",
+                "vendor": "Unknown",
+                "version": "Unknown",
+                "banner": "Banner Grabbing failed: "
+            }
         ],
-        "scan_time": 6.2
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [],
         "scan_time": 3.05
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 6.2
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 3.19
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 3.15
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 2.13
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.09
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.19
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.21
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.14
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.17
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.16
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 2.19
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 1.06
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 1.07
-    },
-    {
-        "host": "google.com",
-        "ip": "172.217.24.142",
-        "open_ports": [
-            80,
-            443
-        ],
-        "scan_time": 1.07
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.1
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.07
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.08
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.08
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.07
-    },
-    {
-        "host": "scanme.nmap.org",
-        "ip": "45.33.32.156",
-        "open_ports": [
-            22,
-            80
-        ],
-        "scan_time": 1.08
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.07
-    },
-    {
-        "host": "LOCALHOST",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135
-        ],
-        "scan_time": 2.04
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 3.04
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.07
-    },
-    {
-        "host": "localhost",
-        "ip": "127.0.0.1",
-        "open_ports": [
-            135,
-            445
-        ],
-        "scan_time": 2.08
     },
     {
         "host": "localhost",
@@ -408,49 +114,43 @@
                 "banner": "Banner Grabbing failed: "
             }
         ],
-        "scan_time": 2.08
+        "scan_time": 2.09
     },
     {
         "host": "scanme.nmap.org",
         "ip": "45.33.32.156",
         "open_ports": [
-            22,
-            80
+            80,
+            22
         ],
         "banners": {
-            "80": "HTTP/1.1 400 Bad Request",
-            "22": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+            "22": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13",
+            "80": "HTTP/1.1 400 Bad Request"
         },
         "services": [
-            {
-                "port": 135,
-                "service": "Unknown",
-                "vendor": "Unknown",
-                "version": "Unknown",
-                "banner": "Banner Grabbing failed: "
-            },
-            {
-                "port": 445,
-                "service": "Unknown",
-                "vendor": "Unknown",
-                "version": "Unknown",
-                "banner": "Banner Grabbing failed: "
-            },
-            {
-                "port": 80,
-                "service": "HTTP",
-                "vendor": "Apache",
-                "version": "2.4.7",
-                "banner": "HTTP/1.1 400 Bad Request\r\nDate: Thu, 25 Jun 2026 12:42:10 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nConnection: close\r\nContent-Type: text/html; charset=iso-8859-1"
-            },
             {
                 "port": 22,
                 "service": "SSH",
                 "vendor": "OpenSSH",
                 "version": "6.6.1p1",
                 "banner": "SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.13"
+            },
+            {
+                "port": 80,
+                "service": "HTTP",
+                "vendor": "Apache",
+                "version": "2.4.7",
+                "banner": "HTTP/1.1 400 Bad Request\r\nDate: Sun, 19 Jul 2026 10:04:22 GMT\r\nServer: Apache/2.4.7 (Ubuntu)\r\nConnection: close\r\nContent-Type: text/html; charset=iso-8859-1",
+                "protocol": {
+                    "http_version": "HTTP/1.1",
+                    "status": "200",
+                    "status_message": "OK",
+                    "date": "Sun, 19 Jul 2026 10:04:23 GMT",
+                    "server": "Apache/2.4.7 (Ubuntu)",
+                    "content_type": "text/html"
+                }
             }
         ],
-        "scan_time": 1.07
+        "scan_time": 2.35
     }
 ]

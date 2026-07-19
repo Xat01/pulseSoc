@@ -125,8 +125,17 @@ async def Worker(queue, ip, host):
                 log(f"[OPEN] Port {port} is open", level=1, color=Fore.GREEN)
 
                 service_banner = await banner_grabbing(host, port)
-                fingerprint = fingerprint_service(port, service_banner)
-                fingerprints.append(fingerprint)
+                fingerprint = fingerprint_service(host, port, service_banner)
+                print(f"PORT {port} -> {fingerprint!r}")
+                print(f"[DEBUG] Fingerprint: {fingerprint}")
+                if fingerprint is not None:
+                    fingerprints.append(fingerprint)
+                else:
+                    log(
+                        f"Fingerprint genertion failed for port {port}",
+                        level=1,
+                        color=Fore.RED,
+                    )
                 banner_lines = service_banner.splitlines()
                 short_banner = banner_lines[0] if banner_lines else "No banner"
                 banners[port] = short_banner
